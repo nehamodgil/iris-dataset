@@ -12,20 +12,21 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 
-url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
-names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
-dataset = pandas.read_csv(url, names=names)
+if __name__ == '__main__':
+    url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
+    names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
+    dataset = pandas.read_csv(url, names=names)
 
-print(dataset.head(20))
+    print(dataset.head(20))
 
-# box and whisker plots
-dataset.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
-plt.show()
+    # box and whisker plots
+    dataset.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
+    plt.show()
 
-# generate a historgram
-dataset.hist()
-plt.show()
+    # generate a historgram
+    dataset.hist()
+    plt.show()
 
-# scatter plots
-scatter_matrix(dataset)
-plt.show()
+    # scatter plots
+    scatter_matrix(dataset)
+    plt.show()
